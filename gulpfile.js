@@ -13,28 +13,28 @@ var buffer = require('vinyl-buffer');
 
 // JavaScript linting task
 gulp.task('jshint', function() {
-	return gulp.src('site/js/*.js')
+	return gulp.src('LandingPage/js/*.js')
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'));
 });
 
 // Compile Sass task
 gulp.task('sass', function() {
-	return gulp.src('site/scss/*.scss')
+	return gulp.src('LandingPage/scss/*.scss')
 		.pipe(sass())
-		.pipe(gulp.dest('site/css'));
+		.pipe(gulp.dest('LandingPage/css'));
 });
 
 // Minify index
 gulp.task('html', function() {
-	return gulp.src('site/index.html')
+	return gulp.src('LandingPage/index.html')
 		.pipe(minifyHTML())
 		.pipe(gulp.dest('build/'));
 });
 
 // JavaScript build task, removes whitespace and concatenates all files
 gulp.task('scripts', function() {
-  return browserify('site/js/main.js')
+  return browserify('LandingPage/js/main.js')
     .bundle()
     .pipe(source('app.js'))
     .pipe(buffer())
@@ -44,22 +44,22 @@ gulp.task('scripts', function() {
 
 // Styles build task, concatenates all the files
 gulp.task('styles', function() {
-	return gulp.src('site/css/*.css')
+	return gulp.src('LandingPage/css/*.css')
 		.pipe(concat('styles.css'))
 		.pipe(gulp.dest('build/css'));
 });
 
 // Image optimization task
 gulp.task('images', function() {
-	return gulp.src('site/img/*')
+	return gulp.src('LandingPage/img/*')
 		.pipe(imagemin())
 		.pipe(gulp.dest('build/img'));
 });
 
 // Watch task
 gulp.task('watch', function() {
-	gulp.watch('site/js/*.js', ['jshint']);
-	gulp.watch('site/scss/*.scss', ['sass']);
+	gulp.watch('LandingPage/js/*.js', ['jshint']);
+	gulp.watch('LandingPage/scss/*.scss', ['sass']);
 });
 
 // Default task
