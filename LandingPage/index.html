@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Flappy Bird Clone: Thinkful Project</title>
+        <meta name="description" content="A Flappy Bird clone made for the Thinkful Intermediate Web Development Course">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <style> 
+        	html, body {
+			  overflow: auto;
+			  text-align: center;
+			  width: 100%;
+			  padding: 0;
+			  margin: 0;
+			  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			  background-color: #018695;
+			  color: white;
+			}
+
+			a {
+			  text-decoration: none;
+			  color: white;
+			}
+
+			nav {
+			  width: 100%;
+			}
+
+			nav ul {
+			  height: 2em;
+			  margin: 0;
+			  padding: 0;
+			}
+
+			nav li {
+			  list-style-type: none;
+			  display: inline-block;
+			  box-sizing: border-box;
+			  text-align: center;
+			  margin-right: 1em;
+			  line-height: 2;
+			}
+
+			header {
+			  overflow: hidden;
+			  position: relative;
+			  width: 100%;
+			  height: 400px;
+			  text-align: center;
+			  background: url("../img/FlappyBackground.png") no-repeat center center fixed;
+			  background-size: cover;
+			  color: black;
+			}
+
+			header h1 {
+			  padding-top: 50px;
+			  font-size: 2em;
+			  box-sizing: border-box;
+			  margin: 0;
+			}
+
+			header .secondline {
+			  padding: 0;
+			  margin-bottom: 50px;
+			}
+
+			header .play {
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);
+			  width: 100px;
+			  height: 50px;
+			  border-radius: 8px;
+			  border: 1px solid black;
+			  background-color: #018695;
+			  color: white;
+			}
+
+			@media screen and (min-width: 1024px) {
+			  header {
+			    height: 800px;
+			  }
+
+			  header h1 {
+			    font-size: 5em;
+			  }
+
+			  header .play {
+			    width: 200px;
+			    height: 50px;
+			    border-radius: 10px;
+			    border: 3px solid black;
+			    font-size: 2em;
+			  }
+
+			  header .firstline {
+			    padding-top: 2em;
+			  }
+			}
+
+			@media screen and (min-width: 768px) and (max-width: 1024px) {
+			  header h1 {
+			    font-size: 4em;
+			  }
+			}
+
+			@media screen and (max-width: 768px) and (min-width: 627px) {
+			  header h1 {
+			    font-size: 3em;
+			 }
+			}
+
+
+			.intro {
+			  text-align: center;
+			  font-size: 2em;
+			  background-color: #A6FB9F;
+			  margin: 0;
+			  padding: 1em 0;
+			  color: #018695;
+			}
+
+			@media screen and (min-width: 1024px) {
+			  .intro {
+			    font-size: 3em;
+			  }
+			}
+		</style>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+   	</head>
+
+<body>
+	<nav class="navbar">
+	    <ul>
+	        <li>
+	            <a href="#">HOME</a>
+	        </li>
+	        <li>
+	            <a href="#">ABOUT</a>
+	        </li>
+	        <li>
+	            <a href="#">CONTACT</a>
+	        </li>
+	    </ul>
+	</nav>
+
+	<header >
+	    <h1 class="firstline" >Flappy Bird:</h1>
+	    <h1 class="secondline">Addiction At Work</h1>
+	    <section class="call-to-action">
+	   		<button class="play"><a href="#">Play Now</a></button>
+		</section>
+	</header>
+
+	<section class="intro">
+	    <p>The game that you just can't put down!</p>
+	</section>
+
+	<section class="features">
+	    <ul><li class="item1"><img src="img/FB-256px.png" alt="feature-icon" srcset="img/FB-128px.png 128w, img/FB-256px.png 256w, img/FB-512px.png 512w" sizes="(max-width: 768px) 33vw, (max-width: 1024px) 30vw, 256px"><h2>Take Control</h2><p>Tap your way through a maze of pipes!</p></li><li class="item2"><img src="img/FB-256px.png" alt="feature-icon" srcset="img/FB-128px.png 128w, img/FB-256px.png 256w, img/FB-512px.png 512w" sizes="(max-width: 768px) 33vw, (max-width: 1024px) 30vw, 256px"><h2>Track Your Score</h2><p>Track your score and those of your friends!</p></li><li class="item3"><img src="img/FB-256px.png" alt="feature-icon" srcset="img/FB-128px.png 128w, img/FB-256px.png 256w, img/FB-512px.png 512w" sizes="(max-width: 768px) 33vw, (max-width: 1024px) 30vw, 256px"><h2>Rise to the Top</h2><p>Climb the international FlappyBird ladder!</p></li></ul>
+	</section>
+
+	<footer>
+	    <div class="social">
+	    	<ul>
+	    		<li><a href="#">Github</a></li>
+	    		<li><a href="#">Facebook</li>
+	    	</ul>
+	    </div>
+	    <p>Here would be the legal info and additional info necessary</p>
+	</footer>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/velocity/1.2.2/velocity.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/velocity/1.2.2/velocity.ui.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
